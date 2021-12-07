@@ -1,0 +1,39 @@
+.print-off{
+    display: none;
+}
+
+ul li{
+    display: none;
+}
+
+#getImgTag{
+    display: inline;
+
+}
+#text_Edit{
+    display: none;
+}
+#text{
+ display: none;
+}
+.warrp{
+    display: none;
+}
+#canvas-area{
+    display: none;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.printwarp{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.print-area{
+    margin: 0px;
+    border: 1px solid;
+    height: 453.54px;
+    width: 377.95px;
+}

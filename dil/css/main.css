@@ -1,0 +1,217 @@
+
+/* main */
+body,html{
+    margin: 0px;
+    padding: 0px;
+    background-color: floralwhite;
+}
+.printwarp{
+    display: none;
+}
+
+ .warrp{
+    width: 100%;
+    height: 100%;
+    background-color: floralwhite;
+} 
+.main-canvas{
+    position: relative;
+    top: 15%;
+    height: 453.54px;
+    width: 377.95px;
+    margin: 4%;
+    background-color: white;
+    overflow: hidden; 
+    border:  1px solid;
+}
+#canvas-area{
+    position: absolute;
+    z-index: 1;
+}
+.object{
+    touch-action: none;
+    user-select: none;
+}
+#text{
+    position: absolute;
+}
+#getImgTag{
+    display: none;
+}
+/* スクロール */
+
+/*スクロールバーの軌道*/
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(121, 50, 7, 0.1);
+}
+
+/*スクロールバーの動く部分*/
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 50, .5);
+  border-radius: 10px;
+  box-shadow:0 0 0 1px rgba(255, 255, 255, .3);
+}
+
+/* nav */
+#nav-warp{
+    width: 100vw;
+    height: auto;
+    background-color: #ffffff;
+}
+.buttom-btn-nav{
+    height: 100px;
+    position: fixed;
+    display: block;
+    background: #ffffff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#text_menu{
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    list-style: none;
+    position: absolute;
+    bottom: 100px;
+    background: rgb(255, 255, 255);
+    height: 90px;
+    width: 100%;
+    left: 0;
+    display: none;
+}
+
+
+.main-btn-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1000;
+}
+.buttom-btn-nav ul li{
+    flex: 1;
+}
+
+.navName {
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 0px;
+    margin: 0px;
+    text-shadow:1px 1px 0 #32221b, -1px -1px 0 #32221b,
+    -1px 1px 0 #32221b, 1px -1px 0 #32221b,
+    0px 1px 0 #32221b,  0-1px 0 #32221b,
+    -1px 0 0 #32221b, 1px 0 0 #32221b;
+}
+.filelabel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    color: #f0f0f0;    
+    background-color: #754c24;
+    margin: 1px;
+
+}
+
+.buttom-btn-nav ul li label svg {
+    font-size: 40px;
+}
+
+#sub_menu{
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    list-style: none;
+    position: absolute;
+    bottom: 100px;
+    background: rgb(255, 255, 255);
+    height: 75px;
+    width: 100%;
+    left: 0;
+   
+}
+#text_Edit{
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    list-style: none;
+    position: absolute;
+    bottom: 100px;
+    background: rgb(255, 255, 255);
+    height: 75px;
+    width: 100%;
+    left: 0;
+    
+    z-index: 1; 
+}
+/* テンプレートnav */
+#template-test{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+#template_nav{
+    overflow-x: scroll;
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    bottom: 100px;
+    width: 100%;
+    background-color: #754c24;;
+}
+.temple-btn-ul{
+    list-style: none;
+    display: flex;
+    margin: 0px;
+}
+.sample-btn{
+    appearance: none;
+    font-family: inherit;
+    display: inline-block;
+    border: 0;
+    background: #a67c52;
+    color: #fff;
+    padding: 6px 0px 0px 0px;
+    margin: 2px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+.icon{
+    width: 40px;
+ height: auto; 
+}
+.tempate_img{
+    width: 67px;
+ height: auto; 
+}
+.ui{
+    display: none;
+}
+.show{
+    display: block;
+}
+.chenge{
+    display: block;
+}
+
+
+
+input[type="text"] {
+	width:100%;
+    height: 35px;
+}
+
+.fileinput{
+    display: none;
+}
+
+.none-btn,.make-btn{
+    display: none;
+}

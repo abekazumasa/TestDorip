@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+   <link rel="stylesheet" type="text/css" media="print" href="./dil/css/print.css">
+   <link rel="stylesheet" type="text/css" media="screen" href="./dil/css/main.css">
+   <title class="print-off">Testvar2.2</title>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0W16VYFRMY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0W16VYFRMY');
+</script>
+</head>
+<body>
+   <div class="printwarp">
+      <div class="print-area">
+         <img src="" id="getImgTag">
+         <img src="" id="textImage"> 
+      </div>
+   </div>
+   <!-- main -->
+   <div class="warrp">
+      <div class="main-canvas" id ="main">
+         <img src="./dil/Img/text_Icon.png" id='template-test'>
+         <canvas class="object" id="canvas-area"></canvas>
+         
+      </div>
+   </div>
+   <!-- nav -->
+   <div id="nav-warp">
+   <nav class="buttom-btn-nav">
+      <ul class="main-btn-nav">
+         <li>
+            <label for="image_file" class="filelabel">
+               <span class="navName">step1</span>
+               <i class="fas fa-camera"></i>
+               <span class="navName">撮る/画像選択</span>
+            </label>
+            <input type="file" accept="image/*" id="image_file" class="fileinput">
+         </li>
+         <li>
+            <label for="edit_btn"  class="filelabel">
+               <span class="navName">step2</span>
+               <i class="fas fa-file-signature"></i>
+               <span class="navName">画像加工</span></label>
+            <button id ="edit_btn" class="none-btn"></button>
+
+         </li>
+         <li>
+            <label for="print-btn"  class="filelabel">
+               <span class="navName">step3</span>
+               <i class="fas fa-print"></i>
+               <span class="navName">印刷する</span></label>
+            <button id="print-btn"  class="none-btn"></button>
+         </li>
+      </ul>
+      <div id="sub_menu" class="ui">
+         <ul class="main-btn-nav">
+            <li>
+               <label for="text_btn"  class="filelabel">
+               <img src="./dil/Img/text_Icon.png" alt="アイコン" title="icon" class ="icon">
+               <span class="navName">テキスト入力</span></label>
+               <button id="text_btn" value="1" class="make-btn"></button>
+            </li>
+            <li>
+               <label for="processing"  class="filelabel">
+               <i class="fas fa-cut"></i>
+               <span class="navName">切り抜き</span></label>
+               <button id="processing" value="2" class="make-btn"></button>
+            </li>
+            <li>
+               <label for="template_btn"  class="filelabel">
+               <i class="fas fa-archive"></i>
+               <span class="navName">テンプレート</span></label>
+               <button id="template_btn" value="3" class="make-btn"></button>
+            </li>
+         </ul>
+      </div>
+      <div id ="text_Edit" class="ui">
+         <label for="text_exe" class="filelabel">
+            <span class="navName">テキストを適用</span>
+         </label>
+         <button id ="text_exe" class="none-btn"></button>
+         <input type="text" id="text_pro" placeholder="文字をここに入力してください">
+      </div>
+      
+   </nav>
+   <nav id="template_nav"  class="ui">
+   <div id ="template_edit">
+      <ul class="temple-btn-ul">
+         <li>
+            <button id="template1" class="sample-btn" type="button" value=1>
+               <p class="navName">シンプル</p>
+               <img src ="./dil/Img/templeate_img.png" class="tempate_img">
+            </button>
+         </li>
+         <li>
+            <button id="template2" class="sample-btn" type="button" value="2">
+               <p class="navName">シンプル</p>
+               <img src ="./dil/Img/templeate_img_1.png" class="tempate_img">
+            </button>
+         </li>
+         <li>
+            <button id="template3"class="sample-btn" type="button" value="3" >
+               <p class="navName">シンプル</p>
+               <img src ="./dil/Img/templeate_img_2.png"  class="tempate_img">
+            </button>
+         </li>
+         <li>
+            <button id="template4"  class="sample-btn" type="button" value="4" >
+               <p class="navName">シンプル</p>
+               <img src ="./dil/Img/templeate_img_3.png" class="tempate_img">
+            </button>
+         </li>
+         <li>
+            <button id="template5"  class="sample-btn" type="button" value="5" >
+               <p class="navName">シンプル</p>
+               <img src ="./dil/Img/templeate_img_4.png" class="tempate_img">
+            </button>
+         </li>
+      </ul>
+   </div>
+   </nav>
+</div>
+   <!-- script -->
+   <script src="./dil/src/jquery-3.6.0.min.js"></script>
+   <script defer src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
+   <script src="./dil/dist/main.js"></script>
+</body>
+
+</html>
