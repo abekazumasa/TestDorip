@@ -6,10 +6,7 @@ ul li{
     display: none;
 }
 
-#getImgTag{
-    display: inline;
 
-}
 #text_Edit{
     display: none;
 }
@@ -27,13 +24,26 @@ body{
     padding: 0px;
 }
 .printwarp{
+    position: absolute;
     width: 100%;
     height: 100%;
     display: block;
 }
 .print-area{
+    position: absolute;
     margin: 0px;
     border: 1px solid;
     height: 453.54px;
     width: 377.95px;
+}
+#tempImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 453.54px;
+    width: 377.95px;
+}
+#getImgTag{
+    position: absolute;
 }

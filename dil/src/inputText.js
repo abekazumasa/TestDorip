@@ -5,7 +5,7 @@ export function createText(element){
     var strlemgth =strLength(element.value);
     console.log(strlemgth);
     new_element.width  = (48*strlemgth)/2+7;
-    new_element.height =50;
+    new_element.height =60;
     new_element.classList.add("object");
     new_element.setAttribute("id","text");
     var objectcount = document.getElementsByClassName('object');
@@ -16,7 +16,7 @@ export function createText(element){
     var textwid = ctx.measureText(element.value);
     console.log(new_element.width);
     console.log(textwid.width);
-    ctx.fillText(element.value, 0, 49);
+    ctx.fillText(element.value, 0, 48);
 }
 
 
