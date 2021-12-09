@@ -18,17 +18,18 @@
 <body>
    <div class="printwarp">
       <div class="print-area">
-         <img src="" id="getImgTag">
-         <img src="" id="textImage">
-         <img src="" id = "tempImage">
+         <img src="./dil/Img/sample.png" id="outputImg">
+         <img src="./dil/Img/sample.png" id="textImage">
+         <img src="./dil/Img/sample.png" id = "tempImage">
       </div>
    </div>
    <!-- main -->
    <div class="warrp">
       <div class="main-canvas" id ="main">
-         <img src="./dil/Img/text_Icon.png" id='template-test'>
+         <img src="./dil/Img/sample.png" id='template-test'>
+         
          <!-- <canvas class="object" id="canvas-area"></canvas> -->
-         <img src ="" class="object" id="canvas-area">
+         <img src="./dil/Img/sample.png" class="object" id="canvas-area">
       </div>
    </div>
    <!-- nav -->
@@ -59,28 +60,33 @@
             <button id="print-btn"  class="none-btn"></button>
          </li>
       </ul>
+      <!-- サブメニュー -->
       <div id="sub_menu" class="ui">
          <ul class="main-btn-nav">
             <li>
+               <!-- テキスト入力 -->
                <label for="text_btn"  class="filelabel">
                <img src="./dil/Img/text_Icon.png" alt="アイコン" title="icon" class ="icon">
                <span class="navName">テキスト入力</span></label>
-               <button id="text_btn" value="1" class="make-btn"></button>
+               <button id="text_btn" class="make-btn"></button>
             </li>
             <li>
-               <label for="processing"  class="filelabel">
+               <!-- 切り抜き -->
+               <label for="cutout-btn"  class="filelabel">
                <i class="fas fa-cut"></i>
                <span class="navName">切り抜き</span></label>
-               <button id="processing" value="2" class="make-btn"></button>
+               <button id="cutout-btn" class="make-btn"></button>
             </li>
             <li>
+               <!-- テンプレート -->
                <label for="template_btn"  class="filelabel">
                <i class="fas fa-archive"></i>
                <span class="navName">テンプレート</span></label>
-               <button id="template_btn" value="3" class="make-btn"></button>
+               <button id="template_btn" class="make-btn"></button>
             </li>
          </ul>
       </div>
+      <!-- テキスト編集画面 -->
       <div id ="text_Edit" class="ui">
          <label for="text_exe" class="filelabel">
             <span class="navName">テキストを適用</span>
@@ -88,8 +94,14 @@
          <button id ="text_exe" class="none-btn"></button>
          <input type="text" id="text_pro" placeholder="文字をここに入力してください">
       </div>
-      
+      <!-- 切り抜き編集画面 -->
+      <div id="cutout-Edit" class="ui">
+         <button id ="cutout-exe">
+            <p class="navName" id ="cutout-txt">切り抜く</p>
+         </button>
+      </div>
    </nav>
+   <!-- テンプレート選択画面 -->
    <nav id="template_nav"  class="ui">
    <div id ="template_edit">
       <ul class="temple-btn-ul">

@@ -7,5 +7,8 @@
     "interactjs": "^1.10.11",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "cropperjs": "^1.5.12"
   }
 }

@@ -12,9 +12,6 @@ export function createText(element){
     parent_element.appendChild(new_element);
     var ctx = new_element.getContext('2d');
     ctx.font = "48px serif";
-    var textwid = ctx.measureText(element.value);
-    console.log(new_element.width);
-    console.log(textwid.width);
     ctx.fillText(element.value, 0, 48);
 }
 

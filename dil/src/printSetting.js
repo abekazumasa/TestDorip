@@ -1,7 +1,7 @@
 
 
 export function doprint(){
-let canvasData = document.getElementById("canvas-area");
+var canvasData = document.getElementById("canvas-area");
 let outputImg = document.getElementById("getImgTag");
 let tempImage =document.getElementById("tempImage");
 let tempsrc =document.getElementById("template-test");

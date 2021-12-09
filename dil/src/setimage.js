@@ -1,4 +1,4 @@
-
+var canvas = document.getElementById('canvas-area');
 export function loadImage(e) {
     if (!e.target.files[0]) {
       return;
@@ -21,7 +21,9 @@ function draw(url) {
       return;
     }
     var img = new Image();
+   
     img.src = url;
+    canvas.src =img.src;
 
     img.onload = () => {
         drawImageCenter(img);
@@ -29,7 +31,7 @@ function draw(url) {
 }
 function drawImageCenter(img) {
     var maincanvas = document.getElementById("main");
-    var canvas = document.getElementById("canvas-area");
+    
    const maxW  = maincanvas.clientWidth;
    const maxH  = maincanvas.clientHeight;
    var drawHeight = 0;
@@ -52,5 +54,5 @@ function drawImageCenter(img) {
    }
    canvas.width = drawWidth;
    canvas.height = drawHeight;
-   canvas.src =img.src;
+
 }
