@@ -3,7 +3,6 @@ export function createText(element){
     var parent_element = document.getElementById('main');
     var new_element = document.createElement('canvas');
     var strlemgth =strLength(element.value);
-    console.log(strlemgth);
     new_element.width  = (48*strlemgth)/2+7;
     new_element.height = 60;
     new_element.classList.add("object");

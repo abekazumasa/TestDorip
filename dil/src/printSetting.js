@@ -3,13 +3,12 @@
 export function doprint(){
 let canvasData = document.getElementById("canvas-area");
 let outputImg = document.getElementById("getImgTag");
-let data = canvasData.toDataURL();
 let tempImage =document.getElementById("tempImage");
 let tempsrc =document.getElementById("template-test");
 tempImage.src = tempsrc.src;
-outputImg.Width =canvasData.Width;
-outputImg.Height = canvasData.Height;
-outputImg.src = data;
+outputImg.src = canvasData.src;
+outputImg.style.width =canvasData.clientWidth+'px';
+outputImg.style.Height = canvasData.clientHeight+'px';
 outputImg.style.transform =canvasData.style.transform;
 outputImg.style.zIndex = canvasData.style.zIndex;
 if(document.getElementById('text')!=null){
@@ -23,7 +22,6 @@ textImage.style.transform =text_data.style.transform;
 textImage.style.zIndex = text_data.style.zIndex;
 $('.print-area').append(textImage);
 }
-
 $('.print-area').append(outputImg);
 $('.printwarp').addClass('print');
 $('body > :not(.print)').addClass('print-off');
@@ -35,9 +33,7 @@ outputImg.onload = ()=>{
     }else{
         window.print();
     }
-   
 }
-
  $('.print').removeClass('print');
  $('.print-off').removeClass('print-off');
 }

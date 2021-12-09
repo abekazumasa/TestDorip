@@ -1,4 +1,4 @@
-import {loadImage,createCanvasContext} from "./getImage.js";
+import {loadImage}from "./setimage.js";
 import interact from 'interactjs'
 import {dragMoveListener,resizeListener,startListener,touchListener,endListener} from "./interactObject.js";
 import {getTemplate} from "./template.js";
@@ -23,10 +23,6 @@ class IntractClass{
         this.template_3 = document.getElementById('template4');
         this.template_4 = document.getElementById('template5');
         this.bind();
-        this.test()
-      }
-      test(){
-          console.log("get");
       }
       //イベント
       bind(){
