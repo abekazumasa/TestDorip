@@ -1,6 +1,7 @@
 
 export function getTemplate(num){
     var new_element =document.getElementById('template-test');
+    new_element.style.display ='block';
     new_element.width  = 378;
     new_element.height = 454;
     console.log(num);

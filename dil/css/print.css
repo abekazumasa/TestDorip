@@ -36,6 +36,7 @@ body{
     height: 453.54px;
     width: 377.95px;
 }
+/* テンプレートcss */
 #tempImage{
     position: absolute;
     top: 0;
@@ -44,6 +45,11 @@ body{
     height: 453.54px;
     width: 377.95px;
 }
+/* 画像css */
 #getImgTag{
+    position: absolute;
+}
+/* テキストcss */
+#textImage{
     position: absolute;
 }

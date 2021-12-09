@@ -5,7 +5,7 @@ export function createText(element){
     var strlemgth =strLength(element.value);
     console.log(strlemgth);
     new_element.width  = (48*strlemgth)/2+7;
-    new_element.height =60;
+    new_element.height = 60;
     new_element.classList.add("object");
     new_element.setAttribute("id","text");
     var objectcount = document.getElementsByClassName('object');

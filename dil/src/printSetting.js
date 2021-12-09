@@ -38,6 +38,6 @@ outputImg.onload = ()=>{
    
 }
 
-// $('.print').removeClass('print');
-// $('.print-off').removeClass('print-off');
+ $('.print').removeClass('print');
+ $('.print-off').removeClass('print-off');
 }
