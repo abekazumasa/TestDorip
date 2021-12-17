@@ -120,6 +120,9 @@ body,html{
     font-size: 16px;
    width: 60%;
 }
+#fontsize{
+    font-size: 16px;
+}
 .text_p{
     font-size: 0.6vmax;
     display: inline-block;
