@@ -6,22 +6,20 @@ var position ={
   x: 0,
   y: 0,
 }
+
+var data = document.getElementById('textarea');
+var main = document.getElementById('main');
 export function resizeListener(event){
-        var target = event.target
-        position.x = (parseFloat(target.getAttribute('data-x')) || 0)
-        position.y= (parseFloat(target.getAttribute('data-y')) || 0)
+  var { x, y } = event.target.dataset
 
-        // update the element's style
-        target.style.width = event.rect.width + 'px'
-        target.style.height = event.rect.height + 'px'
+  x = (parseFloat(x) || 0) + event.deltaRect.left
 
-        // translate when resizing from top or left edges
-        position.x += event.deltaRect.left
-        position.y += event.deltaRect.top
-
-        target.style.transform = 'translate(' + position.x + 'px,' + position.y + 'px) rotate(' + angleScale.angle + 'deg)'+'scale(' + angleScale.scale + ')'
-        target.setAttribute('data-x', x)
-        target.setAttribute('data-y', y)
+  Object.assign(event.target.style, {
+    width: `${event.rect.width}px`,
+    transform: `translate(${x}px, ${y}px)`+`rotate( ${angleScale.angle}deg)`+`scale(${angleScale.scale})`,
+  })
+  Object.assign(event.target.dataset, { x, y })
+  event.target.setAttribute('width',  event.rect.width)
 }
 
 export function dragMoveListener (event) {
@@ -42,6 +40,7 @@ export function dragMoveListener (event) {
 }
 // this function is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener;
+
 export function startListener(event){ 
   angleScale.angle = (parseFloat(event.target.getAttribute('data-angle')) || 0) - event.angle
   angleScale.scale = (parseFloat(event.target.getAttribute('data-scale')) || 1)

@@ -8,18 +8,46 @@ body,html{
 .printwarp{
     display: none;
 }
-
- .warrp{
+#layer-btn{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    text-align:center;
+    background-color: #754c24;
+    z-index: 99;
+}
+#layer-btn svg{
+    color: #FFF;
+}
+#warrp{
     width: 100%;
     height: 100%;
     background-color: floralwhite;
 } 
+#save-btn{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    z-index: 99;
+}
+#open-btn{
+    position: fixed;
+    top: 0px;
+    left: 31px;
+    width: 30px;
+    height: 30px;
+    z-index: 99;
+}
 .main-canvas{
     position: relative;
     top: 15%;
     height: 453.54px;
     width: 377.95px;
-    margin: 4%;
+    margin: 12% 4% 2% 4%;
     background-color: white;
     overflow: hidden; 
     border:  1px solid;
@@ -28,7 +56,7 @@ body,html{
     position: absolute;
     z-index: 1;
     max-width: 100%;
-    display: block;
+    display: none;
 }
 .object{
     touch-action: none;
@@ -40,26 +68,44 @@ body,html{
 #getImgTag{
     display: none;
 }
+#testtext{
+ height: auto;
+ margin: 0px;
+ color: #000000;
+ font-size: 16px;
+ font-family:"Meiryo UI",sans-serif;
+ overflow-wrap: break-word;
+}
+#textarea{
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    z-index: 2;
+}
+.testname{
+    border: 1px solid;
+}
 /* スクロール */
-
 /*スクロールバーの軌道*/
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(121, 50, 7, 0.1);
 }
-
 /*スクロールバーの動く部分*/
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 50, .5);
   border-radius: 10px;
   box-shadow:0 0 0 1px rgba(255, 255, 255, .3);
 }
-
 /* nav */
 #nav-warp{
     width: 100vw;
     height: auto;
     background-color: #ffffff;
+    position: absolute;
+    z-index: 9999;
 }
 .buttom-btn-nav{
     height: 100px;
@@ -70,8 +116,22 @@ body,html{
     left: 0;
     right: 0;
 }
-
-
+#text_pro{
+    font-size: 16px;
+   width: 60%;
+}
+.text_p{
+    font-size: 0.6vmax;
+    display: inline-block;
+    line-height: 1.2;
+    padding: 0px;
+    margin: 0px;
+    color: #FFFFFF;
+    text-shadow:1px 1px 0 #32221b, -1px -1px 0 #32221b,
+    -1px 1px 0 #32221b, 1px -1px 0 #32221b,
+    0px 1px 0 #32221b,  0 -1px 0 #32221b,
+    -1px 0 0 #32221b, 1px 0 0 #32221b;
+}
 .main-btn-nav{
     list-style: none;
     padding: 0;
@@ -83,7 +143,6 @@ body,html{
 .buttom-btn-nav ul li{
     flex: 1;
 }
-
 .navName {
     font-size: 12px;
     line-height: 1.2;
@@ -94,6 +153,16 @@ body,html{
     0px 1px 0 #32221b,  0-1px 0 #32221b,
     -1px 0 0 #32221b, 1px 0 0 #32221b;
 }
+.templateName{
+    font-size: 0.6vmax;
+    line-height: 1.2;
+    padding: 0px;
+    margin: 0px;
+    text-shadow:1px 1px 0 #32221b, -1px -1px 0 #32221b,
+    -1px 1px 0 #32221b, 1px -1px 0 #32221b,
+    0px 1px 0 #32221b,  0 -1px 0 #32221b,
+    -1px 0 0 #32221b, 1px 0 0 #32221b;
+}
 .filelabel{
     display: flex;
     flex-direction: column;
@@ -102,13 +171,22 @@ body,html{
     color: #f0f0f0;    
     background-color: #754c24;
     margin: 1px;
-
+    height: 80px;
 }
-
+.subfilelabel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    color: #f0f0f0;    
+    background-color: #754c24;
+    margin: 1px;
+    height: 53px; 
+}
 .buttom-btn-nav ul li label svg {
     font-size: 40px;
 }
-
+/* 大本のnav */
 #sub_menu{
     padding: 0;
     margin: 0;
@@ -120,8 +198,8 @@ body,html{
     height: 75px;
     width: 100%;
     left: 0;
-   
 }
+/* テキスト編集画面 */
 #text_Edit{
     padding: 0;
     margin: 0;
@@ -129,11 +207,11 @@ body,html{
     list-style: none;
     position: absolute;
     bottom: 100px;
-    background: rgb(255, 255, 255);
+    background: #754c24;
     height: 75px;
     width: 100%;
     left: 0;
-    z-index: 1; 
+    z-index: 1;
 }
 /* 切り取り */
 #cutout-Edit{
@@ -149,6 +227,7 @@ body,html{
     left: 0;
     z-index: 1;
 }
+/* 切り取りボタン */
 #cutout-exe{
     appearance: none;
     font-family: inherit;
@@ -172,23 +251,44 @@ font-size: 1.2rem;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 1;
     display: none;
 }
-
 #template_nav{
     overflow-x: scroll;
+    overflow-y: hidden;
     position: absolute;
     bottom: 100px;
     left: 0px;
-    bottom: 100px;
     width: 100%;
+    height: 110px;
     background-color: #754c24;
 }
 .temple-btn-ul{
     list-style: none;
     display: flex;
     margin: 0px;
+}
+.temple-btn-ul li{
+    display: flex;
+}
+.samplezindex{
+    width: 67px;
+    height: 92px;
+    background: #a67c52;
+    margin: 2px 2px 0px 0px;
+    display: none;
+  
+
+}
+.zindex-up{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px 5px 0px;
+    background: #754c24;
+    appearance: none;
+    text-decoration: none;
+    cursor: pointer;
 }
 .sample-btn{
     appearance: none;
@@ -203,8 +303,8 @@ font-size: 1.2rem;
     text-decoration: none;
     cursor: pointer;
     transition: 0.3s ease-out;
+  
 }
-
 .icon{
     width: 40px;
  height: auto; 
@@ -222,18 +322,16 @@ font-size: 1.2rem;
 .chenge{
     display: block;
 }
-
-
-
 input[type="text"] {
 	width:100%;
     height: 35px;
 }
-
 .fileinput{
     display: none;
 }
-
 .none-btn,.make-btn{
+    display: none;
+}
+.nondisplay{
     display: none;
 }

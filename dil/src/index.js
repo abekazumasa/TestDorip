@@ -1,17 +1,15 @@
-//import {loadImage,createCanvasContext} from './getImage.js';
-import{loadImage,} from "./setimage.js";
 import interact from 'interactjs';
-import {dragMoveListener,resizeListener,startListener,touchListener,endListener} from './interactObject.js';
-import {getTemplate} from './template.js';
-import {createText} from './inputText.js';
+import {dragMoveListener,resizeListener,startListener,touchListener,endListener,move} from './interactObject.js';
+import {getTemplate,zindexCheng} from './template.js';
+import {createText,addclass,removeclass} from './inputText.js';
 import {doprint} from './printSetting.js';
 import {cutoutMode,cutoutExecute,cutOutDestroy} from'./cutOut.js';
+import{dosave,checkfiles} from './fileManagement.js';
 
 var sub = document.getElementById('sub_menu');
 var text_edit = document.getElementById('text_Edit');
 var cutout_edit = document.getElementById('cutout-Edit');
 var template_edit = document.getElementById('template_nav');
-
 class IntractClass{
     constructor() {
       this.print_btn = document.getElementById('print-btn');
@@ -22,22 +20,20 @@ class IntractClass{
         this.cutoutExe =document.getElementById('cutout-exe');
         this.template_btn = document.getElementById('template_btn');
         this.text_execute = document.getElementById('text_exe');
-        this.template = document.getElementById('template1');
-        this.template_1 = document.getElementById('template2');
-        this.template_2 = document.getElementById('template3');
-        this.template_3 = document.getElementById('template4');
-        this.template_4 = document.getElementById('template5');
+        this.template = $('.sample-btn');
+        this.zindexbtn = $('.zindex-up');
+        this.save = document.getElementById('save-btn');
         this.bind();
-        this.test();
-      }
-      test(){
-          console.log("get");
       }
       //イベント
       bind(){
-        //ファイルアップロードを検知
+        //保存ボタンが押されたとき
+        this.save.addEventListener('click',function(){
+          dosave();
+        },false);      
+        //アップロードを検知
         this.file.addEventListener('change', (e) => {
-          loadImage(e);
+          checkfiles(e);
       }, false);
       //画像編集が押されたとき
       this.edit_btn.addEventListener('click',function(){
@@ -60,12 +56,9 @@ class IntractClass{
        this.text_btn.addEventListener('click',function(){
         sub.classList.toggle('show');
         text_edit.classList.toggle('chenge');
+        createText();
+        addclass();
      },false);
-    //テキスト適用されたとき
-     this.text_execute.addEventListener('click',function(){
-      let textval =document.getElementById('text_pro');
-     createText(textval);
-    },false);
     //切り抜くが押されたとき
     this.cutout.addEventListener('click',function(){
       sub.classList.toggle('show');
@@ -77,38 +70,28 @@ class IntractClass{
       cutout_edit.classList.toggle('chenge');
       cutoutExecute();
     },false);
-
      //テンプレートが押されたとき
      this.template_btn.addEventListener('click',function(){
       sub.classList.toggle('show');
       template_edit.classList.toggle('chenge');
      },false);
-     //テンプレートの位置
-     this.template.addEventListener('click',function(){
-       var traget =document.getElementById('template1');
- 
-       getTemplate(traget.value);
-     },false);
-     this.template_1.addEventListener('click',function(){
-      var traget =document.getElementById('template2');
-
-      getTemplate(traget.value);
-    },false);
-    this.template_2.addEventListener('click',function(){
-      var traget =document.getElementById('template3');
-
-      getTemplate(traget.value);
-    },false);
-    this.template_3.addEventListener('click',function(){
-      var traget =document.getElementById('template4');
-
-      getTemplate(traget.value);
-    },false);
-    this.template_4.addEventListener('click',function(){
-      var traget =document.getElementById('template5');
-
-      getTemplate(traget.value);
-    },false);
+     //テンプレート選択されたとき
+    this.template.on('click',function(e){
+      getTemplate(e.currentTarget.value);
+    });
+    this.zindexbtn.on('click',function(e){
+      zindexCheng(e.currentTarget.value);
+    });
+    //textをクリックかそれ以外
+    document.addEventListener('click', (e) => {
+      if(e.target.closest('#textarea')) {
+        addclass();
+        
+      }
+      else {
+        removeclass();
+      }
+    })
 }
 }
 new IntractClass();
@@ -141,17 +124,19 @@ interact('.object')
       end:endListener,
     }
   })
-  // .resizable({
-  //   // resize from all edges and corners
-  //   edges: { left: false, right: true, bottom: false, top: true },
-  //   listeners: {
-  //      move:resizeListener,
-  //   },
-  //   modifiers: [
-  //     // keep the edges inside the parent
-  //     interact.modifiers.restrictEdges({
-  //       outer: '.main-canvas'
-  //     }),
-  //   ],
-  //   inertia: false
-  // })
+  .resizable({
+    // resize from all edges and corners
+    edges: { left: false, right: true, bottom: false, top: false },
+    listeners: {
+       move:resizeListener,
+    },
+    modifiers: [
+      // keep the edges inside the parent
+      interact.modifiers.restrictEdges({
+        outer: '.main-canvas'
+      }),
+    ],
+    inertia: false
+  })
+
+ 

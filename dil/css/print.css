@@ -5,20 +5,42 @@
 ul li{
     display: none;
 }
-
-
+.ui{
+    display: none;
+}
 #text_Edit{
     display: none;
 }
 #text{
  display: none;
 }
-.warrp{
+#warrp{
     display: none;
 }
 #canvas-area{
     display: none;
 }
+
+/* テキスト */
+#testtext{
+    height: auto;
+    margin: 0px;
+    color: #000000;
+    font-size: 16px;
+    overflow-wrap: break-word;
+}
+#textarea{
+    display: none;
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    z-index: 2;
+}
+.testname{
+    border: 0px solid;
+}
+
+
 body{
     margin: 0px;
     padding: 0px;
@@ -46,8 +68,9 @@ body{
     width: 377.95px;
 }
 /* 画像css */
-#getImgTag{
+#outputImg{
     position: absolute;
+    z-index: 1;
 }
 /* テキストcss */
 #textImage{
