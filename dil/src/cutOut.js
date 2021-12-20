@@ -18,7 +18,7 @@ export function cutoutExecute(){
    console.log(cropprboxsize);
    cropperImg.width =cropprboxsize.width;
    cropperImg.height = cropprboxsize.height;
-   cropperImg.style.transform = 'scale(' + 1 + ')';
+   cropperImg.style.transform =   'translate(' +  (parseFloat(cropperImg.getAttribute('data-x')) || 0)+ 'px,' +  (parseFloat(cropperImg.getAttribute('data-y')) || 0)+ 'px)' + 'rotate(' + (parseFloat(cropperImg.getAttribute('data-angle')) || 0) + 'deg)' + 'scale(' + 1 + ')';
    cropperImg.setAttribute('width',cropperImg.width);
    cropperImg.setAttribute('height',cropperImg.height);
    cropperImg.setAttribute('data-scale',1);
