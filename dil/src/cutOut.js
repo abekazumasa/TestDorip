@@ -18,8 +18,10 @@ export function cutoutExecute(){
    console.log(cropprboxsize);
    cropperImg.width =cropprboxsize.width;
    cropperImg.height = cropprboxsize.height;
+   cropperImg.style.scale = 1;
    cropperImg.setAttribute('width',cropperImg.width);
    cropperImg.setAttribute('height',cropperImg.height);
+   cropperImg.setAttribute('data-scale',1);
     cropperImg.src = resultImgUrl;
     cutOutDestroy();
 }
