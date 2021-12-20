@@ -79,26 +79,24 @@ function drawImageCenter(img) {
    }
    canvas.width = drawWidth;
    canvas.height = drawHeight;
-
 }
-
+var a;
 //保存
 export function dosave(){
     for(let i=0;i<saveelement.length;i++){
         savevalue(saveelement[i],i);
     }
     let write_json=JSON.stringify(savefiles);
-    console.log(write_json);
     let blob=new Blob([write_json], {type: 'application/json'});
-    let a=document.createElement("a");
+    a=document.createElement("a");
     a.href=URL.createObjectURL(blob);
     document.body.appendChild(a); // Firefoxで必要
     a.download='sample.json';
     a.click();
     document.body.removeChild(a); // Firefoxで必要
     URL.revokeObjectURL(a.href);
-    localStorage.setItem('id_getImage', write_json);
 }
+
 //ロード
 function onloadData(file){
 
@@ -119,7 +117,6 @@ function onloadData(file){
 //セーブデータ挿入
 function savevalue(elements,num){
 let element = document.getElementById(elements);
-console.log(element);
 var savefile ={
     imgsrcs:null,
     imgtransformx:null,

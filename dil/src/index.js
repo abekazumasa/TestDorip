@@ -28,7 +28,7 @@ class IntractClass{
       //イベント
       bind(){
         //保存ボタンが押されたとき
-        this.save.addEventListener('click',function(){
+        this.save.addEventListener('click',function(e){
           dosave();
         },false);      
         //アップロードを検知

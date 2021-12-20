@@ -5,13 +5,7 @@ export function cutoutMode(){
      cropper = new Cropper(cropperImg, {
          viewMode:1,
         crop(event) {
-          console.log(event.detail.x);
-          console.log(event.detail.y);
-          console.log(event.detail.width);
-          console.log(event.detail.height);
-          console.log(event.detail.rotate);
-          console.log(event.detail.scaleX);
-          console.log(event.detail.scaleY);
+ 
         },
       });
 }
@@ -20,6 +14,12 @@ export function cutoutExecute(){
         return;
     }
    var resultImgUrl = cropper.getCroppedCanvas().toDataURL();
+   var cropprboxsize = cropper.getCropBoxData();
+   console.log(cropprboxsize);
+   cropperImg.width =cropprboxsize.width;
+   cropperImg.height = cropprboxsize.height;
+   cropperImg.setAttribute('width',cropperImg.width);
+   cropperImg.setAttribute('height',cropperImg.height);
     cropperImg.src = resultImgUrl;
     cutOutDestroy();
 }
