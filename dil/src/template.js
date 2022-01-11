@@ -20,15 +20,15 @@ export function getTemplate(num){
     zindexbtn[num].style.display ='block';
     }
     if(num==1){
-        new_element.src = "./dil/Img/Valentines_20211215_01.png";
+        new_element.src = "./dil/Img/Valentine.png";
     }else if(num==2){
-        new_element.src = "./dil/Img/Birthday_20211215_01.png";
+        new_element.src = "./dil/Img/Birthday.png";
     }else if(num==3){
-        new_element.src = "./dil/Img/Christmas_20211215_01.png";
+        new_element.src = "./dil/Img/Christmas.png";
     }else if(num==4){
-        new_element.src = "./dil/Img/Fathers_20211215_01.png";
+        new_element.src = "./dil/Img/Fathers.png";
     }else if(num==5){
-        new_element.src = "./dil/Img/Mothers_20211215_01.png";
+        new_element.src = "./dil/Img/Mothers.png";
     }else{
         new_element.style.display ='none';
         new_element.setAttribute('display',  'none');
